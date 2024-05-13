@@ -1,0 +1,50 @@
+@use "../../../../assets/styles/var.scss";
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  user-select: none;
+  background: linear-gradient(
+    to right,
+    #6188ff,
+    #6188ff 70%,
+    #71a4f3 71%,
+    #71a4f3 97%,
+    #8ec0f0 100%
+  );
+  a {
+    color: var.$color-white;
+    text-decoration: none;
+    background-color: #4379cf;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 30px;
+    border-radius: 50px;
+    font-size: x-large;
+  }
+}
+
+#titulo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  background-color: #88daf2;
+  width: 300px;
+  height: 50px;
+  color: var.$color-white;
+  border-radius: 50px;
+  border: solid 3px #30408d;
+  img {
+    height: 40px;
+  }
+  h1 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1px #30607a;
+  }
+}

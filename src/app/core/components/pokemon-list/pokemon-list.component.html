@@ -1,0 +1,4 @@
+<div class="container" (scroll)="onScroll($event)" #container>
+  <app-list-item *ngFor="let pokemon of pokemonList" [data]="pokemon" />
+  <img src="/assets/img/spinner.svg" alt="spinner" class="spinner" />
+</div>

@@ -1,0 +1,14 @@
+<div id="container">
+  <img src="/assets/img/flecha.png" alt="arrow" />
+  <div class="card">
+    <div class="circle"></div>
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{
+        id
+      }}.png"
+      alt=""
+    />
+    <span>N° {{ id }}</span>
+    <span *ngIf="data">{{ data.name | titlecase }}</span>
+  </div>
+</div>

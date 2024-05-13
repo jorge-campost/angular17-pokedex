@@ -1,0 +1,28 @@
+@use "../../../../assets/styles/var.scss";
+
+footer {
+  background-color: #619cde;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: var.$color-white;
+  a {
+    color: var.$color-white;
+    text-decoration: none;
+  }
+  p {
+    margin: 0 20px;
+  }
+  kbd {
+    display: inline-block;
+    background-color: #6e6b67;
+    border-radius: 50%;
+    width: 26px;
+    line-height: 26px;
+    text-align: center;
+    aspect-ratio: 1;
+    font-size: xx-large;
+    margin: 0 5px;
+  }
+}

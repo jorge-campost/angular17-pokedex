@@ -1,4 +1,15 @@
 <div class="container" (scroll)="onScroll($event)" #container>
-  <app-list-item *ngFor="let pokemon of pokemonList" [data]="pokemon" />
+  @if(!isError){ @for(pokemon of pokemonList; track pokemon){
+  <app-list-item
+    [data]="pokemon"
+    [selected]="pokemon.name === selectedPokemon?.name"
+    (selectedPokemonEvent)="selectPokemon($event)"
+  />
+  }
   <img src="/assets/img/spinner.svg" alt="spinner" class="spinner" />
+  } @else{
+  <div class="card">
+    <p>Ha ocurrido un error al intentar mostrar los datos.</p>
+  </div>
+  }
 </div>

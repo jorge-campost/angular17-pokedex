@@ -3,7 +3,9 @@
   align-items: center;
   position: relative;
   isolation: isolate;
-  img {
+
+  > img {
+    position: absolute;
     height: 20px;
     padding: 0px 10px;
   }
@@ -12,9 +14,10 @@
     align-items: center;
     background-color: #fceab8;
     border-radius: 25px 5px 5px 25px;
-    width: 100%;
+    width: 90%;
     font-size: larger;
     padding-left: 5px;
+    margin-left: 30px;
     gap: 1rem;
     .circle {
       border-radius: 50%;
@@ -24,6 +27,12 @@
     }
     img {
       height: 40px;
+    }
+    &.selected {
+      background-color: #f49545;
+      -webkit-box-shadow: inset 0px 0px 7px 4px #fceab8;
+      -moz-box-shadow: inset 0px 0px 7px 4px #fceab8;
+      box-shadow: inset 0px 0px 7px 4px #fceab8;
     }
   }
 

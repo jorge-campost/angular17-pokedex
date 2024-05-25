@@ -1,4 +1,13 @@
 <main id="container">
-  <app-pokemon-image />
-  <app-pokemon-list />
+  <app-pokemon-detail
+    [pokemon]="selectedPokemon"
+    (changeOpen)="changeOpenState()"
+    [isOpen]="isOpen"
+    [ngClass]="{ open: isOpen }"
+  />
+  <app-pokemon-image [pokemon]="selectedPokemon" [ngClass]="{ open: isOpen }" />
+  <app-pokemon-list
+    (selectedPokemonEvent)="selectPokemon($event)"
+    (changeOpen)="changeOpenState()"
+  />
 </main>

@@ -1,0 +1,38 @@
+<div
+  class="backdrop"
+  [ngClass]="{ hidden: !isOpen }"
+  (click)="changeOpen.emit()"
+></div>
+<div class="container">
+  <div class="data">
+    <div class="area">
+      <app-list-item [allData]="pokemon" [selected]="true" />
+    </div>
+    <div class="area">
+      <p>
+        <span class="label">Type</span>
+        <span *ngFor="let t of pokemon?.types" class="type">{{
+          t.type.name
+        }}</span>
+      </p>
+      <p><span class="label">Height</span>{{ pokemon?.height }}'</p>
+      <p><span class="label">Weight</span>{{ pokemon?.weight }} lbs.</p>
+    </div>
+
+    <div class="area">
+      <div class="description-container">
+        <div></div>
+        <p>{{ description }}</p>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="changeOpen.emit()">
+    <img
+      src="/assets/img/flecha.png"
+      alt="arrow"
+      [ngClass]="{ rotate: isOpen }"
+    />
+  </button>
+</div>

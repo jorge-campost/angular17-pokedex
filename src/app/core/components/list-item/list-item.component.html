@@ -1,9 +1,13 @@
-<div id="container">
-  <img src="/assets/img/flecha.png" alt="arrow" />
-  <div class="card">
+<div id="container" [ngClass]="{ selected: selected }">
+  <img src="/assets/img/flecha.png" alt="arrow" *ngIf="selected" />
+  <div
+    class="card"
+    (click)="selectedPokemonEvent.emit(id)"
+    [ngClass]="{ selected: selected }"
+  >
     <div class="circle"></div>
     <img
-      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{
         id
       }}.png"
       alt=""

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NamedAPIResourceList, NamedApiResource } from '../models/pokemon.model';
+import { NamedAPIResourceList, NamedApiResource } from '../models/pokeapi.model';
 import { Observable, map, take } from 'rxjs';
+import { Pokemon } from '../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +25,11 @@ export class PokemonService {
       );
   }
 
-  getById(id: string) {
-    return this.http.get<NamedAPIResourceList>(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  getById(id: string): Observable<Pokemon> {
+    return this.http.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${id}`);
   }
 
-  getDescription() {
-
+  getDescription(id: string) {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
   }
 }
